@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block body %}
+<div class ="content">
+    <h1>Get Coordinates</h1> 
+    <form action="/coordinates" >
+        <input type="text" name ="address" id="address"
+        placeholder="Enter an Address" />
+        <button type="submit">Submit</button>
+    </form> 
+    <p>{{status}}</p>
+
+
+</div>
+
+
+{% endblock %}
+
+

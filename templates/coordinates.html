@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Coordinates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-table.css') }}">
+{% endblock %}
+
+{% block body %}
+<a href="/">Back to Home</a>
+<div class="content">
+    <h1>Coordinates for Address</h1>
+    <p>Address: {{ address }}</p>
+    <p>Longitude: {{ longitude }}</p>
+    <p>Latitude: {{ latitude }}</p>
+</div>
+
+<div class="meteo_response">
+    <h2>Meteo Data:</h2>
+    <p>Coordinates: {{meteo_response.Latitude()}}°N {{meteo_response.Longitude()}}°E</p>
+    <p>Elevation: {{meteo_response.Elevation()}} m asl</p>
+    <p>Timezone difference to GMT+0: {{meteo_response.UtcOffsetSeconds()}}s</p>
+    <br> </br>
+</div>
+<div class="meteo_data">
+    <h2>Hourly Data</h2>
+    {{ meteo_data.to_html(classes='weather-table') | safe }}
+</div>
+{% endblock %}
+
