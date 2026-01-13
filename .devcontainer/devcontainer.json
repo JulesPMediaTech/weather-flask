@@ -23,5 +23,15 @@
 	"dockerComposeFile": "../docker-compose.yml",
 	"service": "weather-app",
 	"workspaceFolder": "/app",
-	"shutdownAction": "stopCompose"
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter"
+				// Add more as needed
+			]
+		}
+	}
+
 }
